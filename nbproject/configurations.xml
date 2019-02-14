@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>/home/ns/Projects/dhcp_lever/configs.h</itemPath>
+      <itemPath>http.h</itemPath>
+      <itemPath>regexp.h</itemPath>
+      <itemPath>sha256.h</itemPath>
+      <itemPath>textUtils.h</itemPath>
+      <itemPath>/home/ns/Projects/dhcp_lever/types.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>/home/ns/Projects/dhcp_lever/configs.cpp</itemPath>
+      <itemPath>http.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+      <itemPath>regexp.cpp</itemPath>
+      <itemPath>sha256.cpp</itemPath>
+      <itemPath>textUtils.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>/home/ns/Projects/dhcp_lever/params.cfg</itemPath>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <commandLine>`pkg-config --cflags libcurl`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <commandLine>`pkg-config --libs libcurl`</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="/home/ns/Projects/dhcp_lever/configs.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ns/Projects/dhcp_lever/configs.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/ns/Projects/dhcp_lever/params.cfg"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/ns/Projects/dhcp_lever/types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="http.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="http.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="regexp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="regexp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sha256.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sha256.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="textUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="textUtils.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <standard>8</standard>
+          <commandLine>`pkg-config --cflags libcurl`</commandLine>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <commandLine>`pkg-config --libs libcurl`</commandLine>
+        </linkerTool>
+      </compileType>
+      <item path="/home/ns/Projects/dhcp_lever/configs.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ns/Projects/dhcp_lever/configs.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/ns/Projects/dhcp_lever/params.cfg"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/ns/Projects/dhcp_lever/types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="http.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="http.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="regexp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="regexp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="sha256.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sha256.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="textUtils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="textUtils.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
