@@ -44,7 +44,7 @@ bool send_to(dict& data, const string& server, const string& api_auth_secret)
     data.insert(pair<string ,string>("sign", sign));
 
     ostringstream url;
-    url << server << "?" << urlencode(data);
+    url << server << "?" << url_join(data);
     string html = http_get(url.str());
 
     cout << html << endl;
@@ -67,7 +67,7 @@ int main(int argc, char** argv)
     Conf::CONFIG cnf;
     if(!Conf::readConfig(cnf, "params.cfg"))
     {
-        cerr << "Failed read config" << endl;
+        cerr << "Error: Failed read config \"params.cfg\"" << endl;
         return 6;
     }
 

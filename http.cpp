@@ -1,9 +1,11 @@
 #include <sstream>
 #include <curl/curl.h>
+#include "textUtils.h"
 #include "http.h"
 
 
-size_t writeFunction(void *ptr, size_t size, size_t nmemb, std::string* data) {
+size_t writeFunction(void *ptr, size_t size, size_t nmemb, string* data)
+{
     data->append((char*) ptr, size * nmemb);
     return size * nmemb;
 }
@@ -46,26 +48,3 @@ string http_get(const string& url)
     return "";
 }
 
-
-string urlencode(const dict& data)
-{
-    auto curl = curl_easy_init();
-
-    if (curl)
-    {
-        ostringstream params;
-        for(const auto& kv : data)
-        {
-            params << kv.first << '&' << kv.second;
-        }
-        const string& params_str = params.str();
-        string output = curl_easy_escape(curl, params_str.c_str(), params_str.length());
-        
-        curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
-        curl = NULL;
-
-        return output;
-    }
-    return "";
-}

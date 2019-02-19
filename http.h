@@ -10,6 +10,7 @@
 
 #include <string>
 #include <map>
+#include "types.h"
 
 using namespace std;
 
@@ -17,8 +18,6 @@ typedef map<string, string> dict;
 
 
 string http_get(const string& url);
-
-string urlencode(const dict&);
 
 #endif /* HTTP_H */
 
