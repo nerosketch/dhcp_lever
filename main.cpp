@@ -5,6 +5,9 @@
  * Created on February 13, 2019, 11:10 PM
  */
 
+#include <sys/types.h>
+#include <unistd.h>
+
 #include <algorithm>
 #include <iostream>
 #include <sstream>
@@ -63,7 +66,28 @@ int main(int argc, char** argv)
              << "EXPIRY or RELEASE: ./dhcp_lever.py [release |commit]" << endl;
         return 1;
     }
-    
+
+    // Форкаем в новый процесс чтоб isc-dhcp-server не ждал пока улетит запрос
+    {
+        pid_t pid = fork();
+        if (pid < 0)
+        {
+            // Ошибка создания потомка
+            cerr << "Ошибка создания потомка" << endl;
+            return 7;
+        }
+        else if (pid == 0)
+        {
+            // Тут код потомка, не выходим
+        }
+        else
+        {
+            // Тут код родительского процесса
+            // cout << "Fork, pid: " << pid << endl;
+            return 0;
+        }
+    }
+
     Conf::CONFIG cnf;
     if(!Conf::readConfig(cnf, "params.cfg"))
     {
