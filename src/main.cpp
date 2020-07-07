@@ -44,11 +44,11 @@ bool send_to(dict& data, const string& server, const string& api_auth_secret)
     }
 
     string sign = make_sign(data_values, api_auth_secret);
-    data.insert(pair<string ,string>("sign", sign));
+    // data.insert(pair<string ,string>("sign", sign));
 
     ostringstream url;
     url << server << "?" << url_join(data);
-    string html = http_get(url.str());
+    string html = http_get(url.str(), sign);
 
     cout << html << endl;
 
@@ -89,9 +89,9 @@ int main(int argc, char** argv)
     }
 
     Conf::CONFIG cnf;
-    if(!Conf::readConfig(cnf, "params.cfg"))
+    if(!Conf::readConfig(cnf, "/etc/dhcp_lever_params.cfg"))
     {
-        cerr << "Error: Failed read config \"params.cfg\"" << endl;
+        cerr << "Error: Failed read config \"/etc/dhcp_lever_params.cfg\"" << endl;
         return 6;
     }
 

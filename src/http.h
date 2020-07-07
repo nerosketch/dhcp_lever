@@ -17,7 +17,7 @@ using namespace std;
 typedef map<string, string> dict;
 
 
-string http_get(const string& url);
+string http_get(const string& url, const string& api_key);
 
 #endif /* HTTP_H */
 
