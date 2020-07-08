@@ -19,7 +19,7 @@ string http_get(const string& url, const string& api_key)
         struct curl_slist *chunk = NULL;
 
         {
-            string akey = "Api-Auth-Secret: " + api_key;
+            string akey = "Api-Auth-Sign: " + api_key;
             chunk = curl_slist_append(chunk, akey.c_str());
         }
 
